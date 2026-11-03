@@ -74,7 +74,10 @@ async function saveLogo(v) {
   }
   const fill = Math.max(0.15, painted / (info.width * info.height));
   const target = 7200; // painted px² at output size
-  const scale = Math.min(1, 64 / info.height, 260 / info.width, Math.sqrt(target / (info.width * info.height * fill)));
+  // keep detail for sharp screens; visual size is evened out by the page layout
+  const scale = Math.min(1, 120 / info.height, 400 / info.width);
+  void fill;
+  void target;
   const w = Math.max(1, Math.round(info.width * scale));
   const h = Math.max(1, Math.round(info.height * scale));
   await img.resize(w, h).webp({ quality: 90, alphaQuality: 100 }).toFile(path.join(OUT, `${v.id}-wide.webp`));

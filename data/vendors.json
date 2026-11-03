@@ -276,7 +276,7 @@
       ],
       "playId": "com.me.filemong",
       "appStoreId": null,
-      "logoSrc": "https://filemong.com/design/img/event_logo/event_logo_fall.gif",
+      "logoSrc": "https://filemong.com/design/img/logo_red.png",
       "perks": [
         {
           "kind": "join",
@@ -297,16 +297,7 @@
         "from": "footer"
       },
       "domainYear": 2020,
-      "affiliate": false,
-      "logoFix": {
-        "crop": [
-          8,
-          22,
-          196,
-          40
-        ],
-        "whiteToDark": true
-      }
+      "affiliate": false
     },
     {
       "id": "tple",
@@ -401,7 +392,7 @@
       ],
       "playId": "com.ssadafile.app.ssadafilev1",
       "appStoreId": null,
-      "logoSrc": "https://ssadafile.com/img/common/logo.png",
+      "logoSrc": "https://m.ssadafile.com/img/common/logo.png",
       "perks": [
         {
           "kind": "join",
