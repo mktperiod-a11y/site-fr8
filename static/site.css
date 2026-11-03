@@ -1505,3 +1505,102 @@ ul {
   max-width: 100%;
   max-height: 100%;
 }
+
+/* ---- semantic colours with opacity tints ---- */
+:root {
+  --va-key-rgb: 255, 45, 85;
+  --va-up: #d7193c;
+  --va-down: #1d5fd1;
+  --va-key-a04: rgba(var(--va-key-rgb), 0.04);
+  --va-key-a08: rgba(var(--va-key-rgb), 0.08);
+  --va-key-a12: rgba(var(--va-key-rgb), 0.12);
+  --va-ink-a06: rgba(17, 17, 17, 0.06);
+}
+.va-move--up {
+  color: var(--va-up);
+}
+.va-move--down {
+  color: var(--va-down);
+}
+.va-move--new {
+  background: var(--va-key-a12);
+  color: var(--va-key-ink);
+}
+.va-head--home .va-status {
+  background: var(--va-key-a08);
+}
+.va-row--top {
+  background: var(--va-key-a04);
+}
+
+/* ---- one colour for every rank number and value ---- */
+.va-rank,
+.va-row--top .va-rank,
+.va-list > .va-row:first-child .va-rank {
+  color: var(--va-text);
+}
+.va-list > .va-row:first-child .va-score b {
+  color: var(--va-text);
+}
+
+/* ---- quieter button height (36px visible, 44px to tap) ---- */
+.va-go,
+.va-row--top .va-go {
+  min-height: 44px;
+  padding: 4px 12px;
+  background-clip: content-box;
+  border-radius: var(--va-radius);
+}
+.va-go::after {
+  inset: 4px 0;
+}
+
+/* ---- filter tabs as a segmented control, distinct from the header tabs ---- */
+.va-ftabs {
+  display: inline-flex;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border: 0;
+  border-radius: calc(var(--va-radius) + 4px);
+  background: var(--va-surface);
+}
+.va-ftab {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: var(--va-radius);
+  font-size: 14px;
+}
+#v-0:checked ~ .va-ftabs label[for="v-0"],
+#v-1:checked ~ .va-ftabs label[for="v-1"],
+#v-2:checked ~ .va-ftabs label[for="v-2"],
+#v-3:checked ~ .va-ftabs label[for="v-3"] {
+  background: var(--va-text);
+  box-shadow: none;
+  color: #ffffff;
+}
+.va-ftab::after {
+  border-radius: inherit;
+}
+@media (max-width: 599px) {
+  .va-ftabs {
+    display: flex;
+  }
+  .va-ftab {
+    min-height: 40px;
+    padding: 0 4px;
+    font-size: 13px;
+  }
+}
+
+.va-go,
+.va-row--top .va-go {
+  padding: 0 14px;
+  border: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  background-clip: padding-box;
+}
+.va-go::after {
+  inset: 0;
+}

@@ -444,7 +444,6 @@ function buildHome() {
         h('span', { class: 'va-status__dot', 'aria-hidden': 'true' }),
         h('time', { datetime: ranking.date }, `${String(Y).slice(2)}년 ${M}월 ${D}일 순위 업데이트`),
       ),
-      h('p', { class: 'va-lede' }, site.lede),
     ),
     h(
       'section',

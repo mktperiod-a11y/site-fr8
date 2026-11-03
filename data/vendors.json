@@ -27,7 +27,10 @@
         "from": "app"
       },
       "domainYear": 2008,
-      "affiliate": false
+      "affiliate": false,
+      "logoFix": {
+        "clearLight": true
+      }
     },
     {
       "id": "kdisk",
@@ -263,7 +266,10 @@
         "from": "footer"
       },
       "domainYear": 2011,
-      "affiliate": false
+      "affiliate": false,
+      "logoFix": {
+        "clearLight": true
+      }
     },
     {
       "id": "filemong",
@@ -387,7 +393,10 @@
         "from": "footer"
       },
       "domainYear": 2016,
-      "affiliate": false
+      "affiliate": false,
+      "logoFix": {
+        "clearLight": true
+      }
     },
     {
       "id": "ssadafile",

@@ -57,8 +57,9 @@ async function saveLogo(v) {
       if (fix.whiteToDark) {
         const a = Math.max(0, Math.min(255, (min - 120) * 2));
         data[i] = 0x2a; data[i + 1] = 0x25; data[i + 2] = 0x22; data[i + 3] = a;
-      } else if (min > 215 && spread < 40) {
-        data[i + 3] = 0;
+      } else if (min > 200 && spread < 40) {
+        // fade near-white pixels out so no light halo stays around the shapes
+        data[i + 3] = Math.min(data[i + 3], Math.round((255 * (255 - min)) / 55));
       }
     }
     img = sharp(data, { raw: info });
