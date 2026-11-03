@@ -395,7 +395,18 @@ function buildHome() {
         { class: 'va-colmain', 'aria-labelledby': 'list-title' },
         h('h2', { id: 'list-title', class: 'va-sr' }, `웹하드 순위 상위 ${top.length}곳`),
         statusLine(),
-        h('ol', { class: 'va-list' }, top.map((e) => rankRow(e, r))),
+        h(
+          'div',
+          { class: 'va-board' },
+          h(
+            'div',
+            { class: 'va-listhead', 'aria-hidden': 'true' },
+            h('span', '순위'),
+            h('span', '서비스와 주요 혜택'),
+            h('span', '총점'),
+          ),
+          h('ol', { class: 'va-list' }, top.map((e) => rankRow(e, r))),
+        ),
         moreList(r, rest),
       ),
       h(

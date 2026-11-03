@@ -1156,3 +1156,169 @@ ul {
   padding: 13px 0;
   text-underline-offset: 3px;
 }
+
+/* ---- refined hierarchy: one board, quiet controls ---- */
+.va-head h1 {
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+.va-head__when {
+  color: var(--va-key-strong);
+}
+.va-lede {
+  max-width: 40em;
+  color: var(--va-faint);
+}
+.va-status {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.va-board {
+  border: 1px solid var(--va-line);
+  border-radius: var(--va-radius-lg);
+  background: var(--va-card);
+}
+.va-listhead {
+  display: none;
+}
+.va-list {
+  gap: 0;
+}
+.va-row,
+.va-row--top {
+  margin: 0;
+  padding: 14px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--va-line);
+  border-radius: 0;
+}
+.va-list > .va-row:last-child {
+  border-bottom: 0;
+}
+.va-row--top {
+  background: var(--va-surface);
+}
+.va-row--top + .va-row:not(.va-row--top) {
+  margin-top: 0;
+  border-top: 1px solid var(--va-line-strong);
+}
+.va-rank {
+  font-size: 16px;
+  color: var(--va-faint);
+}
+.va-row--top .va-rank {
+  font-size: 24px;
+}
+.va-list > .va-row:first-child .va-rank {
+  font-size: 28px;
+}
+.va-score b {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.va-row--top .va-score b {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 800;
+}
+.va-score small {
+  font-size: 12px;
+  color: var(--va-faint);
+}
+.va-go,
+.va-row--top .va-go {
+  min-width: 0;
+  padding: 0 10px;
+  border: 1px solid var(--va-line-strong);
+  background: var(--va-card);
+  color: var(--va-sub);
+  font-size: 13px;
+  font-weight: 600;
+}
+.va-go::before {
+  content: none;
+}
+.va-more {
+  margin-top: 12px;
+}
+.va-more > summary {
+  color: var(--va-sub);
+  font-size: 15px;
+}
+.va-side {
+  gap: 0;
+  padding: 4px 20px;
+  border-radius: var(--va-radius-lg);
+  background: var(--va-surface);
+}
+.va-side > .va-card {
+  padding: 18px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.va-side > .va-card + .va-card {
+  border-top: 1px solid var(--va-line);
+}
+.va-side .va-card h2 {
+  font-size: 15px;
+}
+.va-side .va-chip {
+  background: var(--va-card);
+  font-size: 13px;
+}
+.va-faq__list {
+  gap: 0;
+  border-top: 1px solid var(--va-line-strong);
+}
+.va-faq__item {
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid var(--va-line);
+  border-radius: 0;
+}
+.va-faq__no {
+  color: var(--va-faint);
+  font-size: 15px;
+  font-weight: 700;
+}
+.va-faq__item p {
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  .va-head h1 {
+    font-size: 32px;
+  }
+  .va-listhead {
+    display: grid;
+    grid-template-columns: 36px 104px minmax(0, 1fr) 96px 104px;
+    column-gap: 16px;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--va-line-strong);
+    color: var(--va-faint);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .va-listhead span:first-child {
+    text-align: center;
+  }
+  .va-listhead span:nth-child(2) {
+    grid-column: 2 / 4;
+  }
+  .va-listhead span:nth-child(3) {
+    text-align: right;
+  }
+  .va-row,
+  .va-row--top {
+    padding: 14px 8px;
+  }
+  .va-row--top {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .va-faq__list {
+    column-gap: 32px;
+  }
+}
