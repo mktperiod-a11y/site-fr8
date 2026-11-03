@@ -39,7 +39,7 @@
       ],
       "playId": "com.kdisk.mobileapp5",
       "appStoreId": "1492405942",
-      "logoSrc": "https://cimage.kdisk.co.kr/main/data/2025/06/16/adm_1750049646_K_%20p.jpg",
+      "logoSrc": "https://webimage.kdisk.co.kr/mobile_version/image/common/cmm_layout_bg_20260105.png",
       "perks": [
         {
           "kind": "join",
@@ -59,12 +59,11 @@
       "affiliate": false,
       "logoFix": {
         "crop": [
-          36,
-          60,
-          136,
-          44
-        ],
-        "clearLight": true
+          6,
+          6,
+          154,
+          50
+        ]
       }
     },
     {
@@ -338,7 +337,7 @@
       ],
       "playId": "com.ggulfile.app.ggulfile_app",
       "appStoreId": null,
-      "logoSrc": null,
+      "logoSrc": "https://ggulfile.com/images/new_logo.png",
       "perks": [
         {
           "kind": "join",
@@ -355,7 +354,15 @@
         "from": "footer"
       },
       "domainYear": 2024,
-      "affiliate": false
+      "affiliate": false,
+      "logoFix": {
+        "crop": [
+          338,
+          0,
+          358,
+          122
+        ]
+      }
     },
     {
       "id": "filemaru",
