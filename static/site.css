@@ -1609,3 +1609,75 @@ ul {
   --va-radius: 6px;
   --va-radius-lg: 10px;
 }
+
+/* even side padding inside the board; one number size for every row */
+.va-row,
+.va-row--top {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.va-listhead {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.va-rank,
+.va-row--top .va-rank,
+.va-list > .va-row:first-child .va-rank {
+  font-size: 22px;
+  font-weight: 800;
+}
+.va-score b,
+.va-row--top .va-score b {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 800;
+}
+@media (min-width: 600px) {
+  .va-row,
+  .va-row--top {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .va-listhead {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* same columns for every row so logos and names line up */
+.va-row,
+.va-row--top {
+  grid-template-columns: 24px 84px minmax(0, 1fr) auto;
+}
+.va-row .va-ico,
+.va-row--top .va-ico {
+  width: 84px;
+  height: 36px;
+}
+@media (min-width: 600px) {
+  .va-row,
+  .va-row--top {
+    grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
+  }
+  .va-listhead {
+    grid-template-columns: 32px 120px minmax(0, 1fr) 104px 104px;
+  }
+  .va-row .va-ico,
+  .va-row--top .va-ico {
+    width: 120px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 599px) {
+  .va-row,
+  .va-row--top {
+    grid-template-columns: 30px 76px minmax(0, 1fr) auto;
+    column-gap: 10px;
+  }
+  .va-row .va-ico,
+  .va-row--top .va-ico {
+    width: 76px;
+    height: 34px;
+  }
+}
