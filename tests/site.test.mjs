@@ -74,9 +74,10 @@ test('inline style and script blocks match the CSP hashes', () => {
 
 test('public list shows ten vendors and the rest stay unranked', () => {
   const s = read(out.real, 'index.html');
-  assert.equal((s.match(/<li class="va-row/g) || []).length, PUBLIC_COUNT);
-  const more = s.split('va-more')[1] || '';
-  assert.ok(!/\d+위/.test(more), 'no rank words for vendors outside the list');
+  const firstPane = s.split('va-pane--0')[1].split('va-pane--1')[0];
+  assert.equal((firstPane.match(/<li class="va-row/g) || []).length, PUBLIC_COUNT);
+  const panes = (s.match(/class="va-board va-pane/g) || []).length;
+  assert.equal((s.match(/<li class="va-row/g) || []).length, PUBLIC_COUNT * panes, 'every view shows the same ten');
 });
 
 test('every "site" link leads to a generated redirect page', () => {

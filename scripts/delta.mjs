@@ -161,8 +161,6 @@ function footer(depth) {
       'div',
       { class: 'va-wrap va-foot__in' },
       h('p', { class: 'va-foot__brand' }, site.brand),
-      h('p', `순위와 혜택은 참고용이에요. 서비스 이용 조건은 각 공식 사이트 안내를 따라요.`),
-      affiliate ? h('p', '일부 바로가기는 제휴 링크예요.') : null,
       h(
         'p',
         { class: 'va-foot__links' },
@@ -172,6 +170,14 @@ function footer(depth) {
         ' ',
         h('a', { href: `${r}guide/` }, '기준 안내'),
       ),
+      h(
+        'nav',
+        { class: 'va-foot__vendors', 'aria-label': '웹하드 목록' },
+        shown.map((e) => h('a', { href: `${r}webhard/${e.id}/` }, byId.get(e.id).name)),
+      ),
+      h('p', `순위와 혜택은 참고용이에요. 서비스 이용 조건은 각 공식 사이트 안내를 따라요. ${cadence.word} 갱신해요.`),
+      affiliate ? h('p', '일부 바로가기는 제휴 링크예요.') : null,
+      h('p', { class: 'va-foot__copy' }, `© ${Y} ${site.brand}`),
     ),
   );
 }
@@ -235,8 +241,9 @@ function goButton(v, r, cls = 'va-go') {
   return h('a', { class: cls, href, rel: rel_(v), 'aria-label': `${v.name} 사이트 확인` }, '사이트 확인');
 }
 
-function rankRow(e, r) {
+function rankRow(e, r, alt = null) {
   const v = byId.get(e.id);
+  if (alt) e = { ...e, rank: alt.rank, prev: null, isNew: false };
   const topRow = e.rank <= 3;
   return h(
     'li',
@@ -245,15 +252,55 @@ function rankRow(e, r) {
     h('span', { class: 'va-ico' }, icon(v, r, topRow ? 48 : 40)),
     h('p', { class: 'va-name' }, h('a', { href: `${r}webhard/${v.id}/` }, v.name), move(e)),
     h('p', { class: 'va-perk' }, perkText(v)),
-    h(
-      'p',
-      { class: 'va-score' },
-      h('b', fmtScore(e.total)),
-      h('small', '점'),
-      h('span', { class: 'va-sr' }, ` (${scaleMax}점 만점)`),
-    ),
+    alt
+      ? h('p', { class: 'va-score' }, h('b', alt.big), alt.small ? h('small', alt.small) : null)
+      : h(
+          'p',
+          { class: 'va-score' },
+          h('b', fmtScore(e.total)),
+          h('small', '점'),
+          h('span', { class: 'va-sr' }, ` (${scaleMax}점 만점)`),
+        ),
     goButton(v, r),
   );
+}
+
+// ---------- filters: the same ten vendors ordered by one public figure ----------
+function filterViews() {
+  const app = (id) => snap.app?.[id] || {};
+  const joinPts = (id) => perkFigures(byId.get(id).perks || []).join;
+  const views = [
+    { key: 'all', label: '통합 순위', head: '총점', list: top.map((e) => ({ e, alt: null })) },
+    {
+      key: 'reviews',
+      label: '리뷰 많은 순',
+      head: '앱 리뷰',
+      val: (id) => app(id).ratings ?? -1,
+      show: (id) => (app(id).ratings != null ? [app(id).ratings.toLocaleString('en-US'), '개'] : ['–', '']),
+    },
+    {
+      key: 'rating',
+      label: '평점 순',
+      head: '앱 평점',
+      val: (id) => (app(id).rating != null ? app(id).rating * 1e7 + (app(id).ratings || 0) : -1),
+      show: (id) => (app(id).rating != null ? [app(id).rating.toFixed(1), '/5'] : ['–', '']),
+    },
+    {
+      key: 'join',
+      label: '가입 혜택 순',
+      head: '가입 혜택',
+      val: (id) => joinPts(id),
+      show: (id) => (joinPts(id) ? [joinPts(id).toLocaleString('en-US'), 'P'] : ['–', '']),
+    },
+  ];
+  for (const vw of views.slice(1)) {
+    const sorted = [...top].sort((a, b) => vw.val(b.id) - vw.val(a.id) || a.rank - b.rank);
+    vw.list = sorted.map((e, i) => {
+      const [big, small] = vw.show(e.id);
+      return { e, alt: { rank: i + 1, big, small } };
+    });
+  }
+  return views;
 }
 
 function moreList(r, list) {
@@ -385,42 +432,49 @@ function buildHome() {
     ],
   };
   const topNames = top.slice(0, 3).map((e) => byId.get(e.id).name).join(', ');
+  const views = filterViews();
   const body = [
-    pageHead(h('span', '웹하드 순위 ', h('span', { class: 'va-head__when' }, ym)), site.lede),
     h(
       'div',
-      { class: 'va-cols' },
+      { class: 'va-head va-head--home' },
+      h('h1', '웹하드 순위 ', h('span', { class: 'va-head__when' }, ym)),
       h(
-        'section',
-        { class: 'va-colmain', 'aria-labelledby': 'list-title' },
-        h('h2', { id: 'list-title', class: 'va-sr' }, `웹하드 순위 상위 ${top.length}곳`),
-        statusLine(),
+        'p',
+        { class: 'va-status' },
+        h('span', { class: 'va-status__dot', 'aria-hidden': 'true' }),
+        h('time', { datetime: ranking.date }, `${String(Y).slice(2)}년 ${M}월 ${D}일 순위 업데이트`),
+      ),
+      h('p', { class: 'va-lede' }, site.lede),
+    ),
+    h(
+      'section',
+      { class: 'va-rankbox', 'aria-labelledby': 'list-title' },
+      h('h2', { id: 'list-title', class: 'va-sr' }, `웹하드 순위 상위 ${top.length}곳`),
+      views.map((vw, i) => h('input', { class: 'va-fin', type: 'radio', name: 'view', id: `v-${i}`, checked: i === 0 })),
+      h(
+        'div',
+        { class: 'va-ftabs', role: 'presentation' },
+        views.map((vw, i) => h('label', { class: 'va-ftab', for: `v-${i}` }, vw.label)),
+      ),
+      views.map((vw, i) =>
         h(
           'div',
-          { class: 'va-board' },
+          { class: `va-board va-pane va-pane--${i}` },
           h(
             'div',
             { class: 'va-listhead', 'aria-hidden': 'true' },
             h('span', '순위'),
             h('span', '서비스와 주요 혜택'),
-            h('span', '총점'),
+            h('span', vw.head),
           ),
-          h('ol', { class: 'va-list' }, top.map((e) => rankRow(e, r))),
-        ),
-        moreList(r, rest),
-      ),
-      h(
-        'aside',
-        { class: 'va-side', 'aria-label': '순위 안내' },
-        changesBox(),
-        criteriaCard(r),
-        h(
-          'section',
-          { class: 'va-card', 'aria-labelledby': 'pk-title' },
-          h('h2', { id: 'pk-title' }, '혜택별로 보기'),
-          perkChipsNav(r, null),
+          h(
+            'ol',
+            { class: 'va-list', 'aria-label': vw.label },
+            vw.list.map(({ e, alt }) => rankRow(e, r, alt)),
+          ),
         ),
       ),
+      h('p', { class: 'va-note' }, '리뷰·평점·가입 혜택 탭은 통합 상위 10곳을 그 값 하나로만 다시 줄 세운 결과예요.'),
     ),
     faq.node,
   ];

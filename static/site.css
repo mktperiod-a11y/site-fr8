@@ -1322,3 +1322,162 @@ ul {
     column-gap: 32px;
   }
 }
+
+/* ---- palette: black / pink-red / light grey ---- */
+:root {
+  --va-key: #ff2d55;
+  --va-key-strong: #d0103b;
+  --va-key-ink: #9b0c2c;
+  --va-key-tint: #ffe9ee;
+  --va-surface: #f2f1f5;
+  --va-line: #e4e3e9;
+  --va-line-strong: #cfced6;
+  --va-text: #111111;
+  --va-sub: #4f4e57;
+  --va-faint: #6a6973;
+  --va-btn: #111111;
+  --va-btn2: #f2f1f5;
+}
+
+/* ---- header: larger brand ---- */
+.va-logo {
+  min-height: 56px;
+  gap: 10px;
+  font-size: 24px;
+}
+.va-logo img {
+  width: 34px;
+  height: 34px;
+}
+
+/* ---- home head ---- */
+.va-head--home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 16px;
+  row-gap: 6px;
+}
+.va-head--home h1 {
+  margin: 0;
+}
+.va-head--home .va-status {
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: var(--va-radius);
+  background: var(--va-surface);
+  color: var(--va-sub);
+  font-size: 13px;
+}
+.va-head--home .va-status time {
+  color: var(--va-text);
+  font-weight: 600;
+}
+.va-head--home .va-lede {
+  flex-basis: 100%;
+  margin-top: 2px;
+}
+
+/* ---- filter tabs (radio, works without script) ---- */
+.va-fin {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.va-ftabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--va-line-strong);
+}
+.va-ftab {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  color: var(--va-sub);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.va-ftab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+}
+.va-ftab:hover::after {
+  opacity: 0.08;
+}
+.va-pane {
+  display: none;
+}
+#v-0:checked ~ .va-pane--0,
+#v-1:checked ~ .va-pane--1,
+#v-2:checked ~ .va-pane--2,
+#v-3:checked ~ .va-pane--3 {
+  display: block;
+}
+#v-0:checked ~ .va-ftabs label[for="v-0"],
+#v-1:checked ~ .va-ftabs label[for="v-1"],
+#v-2:checked ~ .va-ftabs label[for="v-2"],
+#v-3:checked ~ .va-ftabs label[for="v-3"] {
+  color: var(--va-text);
+  box-shadow: inset 0 -2px 0 var(--va-key);
+}
+#v-0:focus-visible ~ .va-ftabs label[for="v-0"],
+#v-1:focus-visible ~ .va-ftabs label[for="v-1"],
+#v-2:focus-visible ~ .va-ftabs label[for="v-2"],
+#v-3:focus-visible ~ .va-ftabs label[for="v-3"] {
+  outline: 2px solid var(--va-key);
+  outline-offset: -2px;
+}
+.va-rankbox .va-note {
+  font-size: 13px;
+  color: var(--va-faint);
+}
+
+/* ---- footer ---- */
+.va-foot__vendors {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 4px;
+  margin: 4px 0 8px;
+}
+.va-foot__vendors a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 6px;
+  color: var(--va-sub);
+  font-size: 14px;
+  text-decoration: none;
+}
+.va-foot__copy {
+  color: var(--va-faint);
+  font-size: 13px;
+}
+
+@media (min-width: 600px) {
+  .va-logo {
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 599px) {
+  .va-ftab {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0 6px;
+    font-size: 14px;
+  }
+}
