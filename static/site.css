@@ -1604,3 +1604,8 @@ ul {
 .va-go::after {
   inset: 0;
 }
+
+:root {
+  --va-radius: 6px;
+  --va-radius-lg: 10px;
+}
