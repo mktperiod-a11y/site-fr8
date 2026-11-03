@@ -1481,3 +1481,15 @@ ul {
     font-size: 14px;
   }
 }
+
+/* logos without a frame; filled site buttons */
+.va-ico {
+  box-shadow: none;
+  background: transparent;
+}
+.va-go,
+.va-row--top .va-go {
+  border: 0;
+  background: var(--va-btn);
+  color: #ffffff;
+}
