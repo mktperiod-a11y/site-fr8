@@ -1,0 +1,40 @@
+name: 혜택 갱신
+
+on:
+  schedule:
+    - cron: '43 23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  perks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 혜택 문구 읽기
+        id: perks
+        run: node scripts/harbor.mjs
+      - name: 바뀐 곳을 PR로 올리기
+        if: ${{ steps.perks.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TZ: UTC
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898297+github-actions[bot]@users.noreply.github.com"
+          git switch -c perks-update
+          git add data/vendors.json
+          git commit -q -m "혜택 문구 갱신"
+          git push -q -f origin perks-update
+          if [ -z "$(gh pr list --head perks-update --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head perks-update --base main --title "혜택 문구 갱신" \
+              --body "업체 공개 페이지에서 읽은 혜택 문구가 바뀐 곳이에요. 바뀐 내용을 확인하고 합쳐 주세요."
+          fi

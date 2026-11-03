@@ -1,0 +1,98 @@
+name: 정기 갱신
+
+on:
+  schedule:
+    - cron: '7 7 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 지표 수집
+        if: ${{ github.event_name != 'push' }}
+        run: node scripts/lumen.mjs
+      - name: 순위 계산
+        id: score
+        continue-on-error: true
+        env:
+          SCORE_PROFILE: ${{ secrets.HARBOR_VAF }}
+        run: node scripts/spruce.mjs
+      - name: 데이터 저장
+        env:
+          TZ: UTC
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898297+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+            exit 0
+          fi
+          if [ "${{ steps.score.outcome }}" = "success" ]; then msg="지표와 순위 갱신"; else msg="지표만 갱신(순위 계산 안 됨)"; fi
+          git commit -q -m "$msg"
+          git push -q origin HEAD:main
+      - name: 계산 실패 알림
+        if: ${{ steps.score.outcome != 'success' }}
+        run: |
+          echo "::error::순위를 계산하지 못했어요. 지난 순위로 배포를 이어 갑니다."
+          exit 1
+
+  build:
+    needs: refresh
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: 사이트 만들기
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: node scripts/delta.mjs
+      - name: 공개 정보 검사
+        env:
+          DENY_LIST: ${{ secrets.EMBER_RB8 }}
+          LEAK_LIST: ${{ secrets.ANCHOR_J40 }}
+          SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: node scripts/birch-ledger.mjs --out _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

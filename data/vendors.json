@@ -1,0 +1,582 @@
+{
+  "vendors": [
+    {
+      "id": "ondisk",
+      "name": "온디스크",
+      "status": "active",
+      "url": "https://new.ondisk.co.kr/",
+      "domains": [
+        "ondisk.co.kr"
+      ],
+      "playId": "com.ondisk.mobile4v18M",
+      "appStoreId": "1536892993",
+      "logoSrc": "https://image.ondisk.co.kr/new/pc/image/layout/logo_fixed.jpg",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000B"
+        },
+        {
+          "kind": "event",
+          "text": "앱 설치 2,000P"
+        }
+      ],
+      "operator": {
+        "name": "(주)엔아이위즈",
+        "bizNo": null,
+        "from": "app"
+      },
+      "domainYear": 2008,
+      "affiliate": false
+    },
+    {
+      "id": "kdisk",
+      "name": "케이디스크",
+      "status": "active",
+      "url": "https://kdisk.co.kr/",
+      "domains": [
+        "kdisk.co.kr"
+      ],
+      "playId": "com.kdisk.mobileapp5",
+      "appStoreId": "1492405942",
+      "logoSrc": "https://cimage.kdisk.co.kr/main/data/2025/06/16/adm_1750049646_K_%20p.jpg",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000P"
+        },
+        {
+          "kind": "event",
+          "text": "앱 설치 쿠폰 3장"
+        }
+      ],
+      "operator": {
+        "name": "(주)엔아이위즈",
+        "bizNo": null,
+        "from": "app"
+      },
+      "domainYear": 2008,
+      "affiliate": false,
+      "logoFix": {
+        "crop": [
+          36,
+          60,
+          136,
+          44
+        ],
+        "clearLight": true
+      }
+    },
+    {
+      "id": "filebogo",
+      "name": "파일보고",
+      "status": "active",
+      "url": "https://www.filebogo.com/",
+      "domains": [
+        "filebogo.com"
+      ],
+      "playId": "com.winpeople.filebogo",
+      "appStoreId": "6766728476",
+      "logoSrc": "https://wimg.filebogo.com/images_bogo/common/logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000P"
+        }
+      ],
+      "operator": {
+        "name": "(주)윈피플",
+        "bizNo": "432-81-02034",
+        "from": "footer"
+      },
+      "domainYear": 2020,
+      "affiliate": false
+    },
+    {
+      "id": "yesfile",
+      "name": "예스파일",
+      "status": "active",
+      "url": "https://www.yesfile.com/",
+      "domains": [
+        "yesfile.com"
+      ],
+      "playId": "com.mnt.aos.yesfile.shortcuts",
+      "appStoreId": "562793918",
+      "logoSrc": "https://www.yesfile.com/img/main/top_logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000P"
+        }
+      ],
+      "operator": {
+        "name": "(주)엠엔티",
+        "bizNo": "898-81-00236",
+        "from": "footer"
+      },
+      "domainYear": 2009,
+      "affiliate": false
+    },
+    {
+      "id": "wedisk",
+      "name": "위디스크",
+      "status": "active",
+      "url": "https://www.wedisk.co.kr/",
+      "domains": [
+        "wedisk.co.kr"
+      ],
+      "playId": null,
+      "appStoreId": null,
+      "logoSrc": "https://m.wedisk.co.kr/common/html/2017_mobile/images/top_logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 2,000P"
+        },
+        {
+          "kind": "event",
+          "text": "포인트 3배 사은행사"
+        }
+      ],
+      "operator": null,
+      "domainYear": 2003,
+      "affiliate": false
+    },
+    {
+      "id": "filenori",
+      "name": "파일노리",
+      "status": "active",
+      "url": "https://www.filenori.com/",
+      "domains": [
+        "filenori.com"
+      ],
+      "playId": "com.FNoriShopGo",
+      "appStoreId": null,
+      "logoSrc": "https://m.filenori.com/mobile/image/logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 2,000P"
+        },
+        {
+          "kind": "event",
+          "text": "골라받기 3배 행사"
+        }
+      ],
+      "operator": {
+        "name": "(주)선한아이디",
+        "bizNo": null,
+        "from": "app"
+      },
+      "domainYear": 2007,
+      "affiliate": false
+    },
+    {
+      "id": "filekuki",
+      "name": "파일쿠키",
+      "status": "active",
+      "url": "https://www.filekuki.com/",
+      "domains": [
+        "filekuki.com"
+      ],
+      "playId": "com.filekukiv6",
+      "appStoreId": null,
+      "logoSrc": "https://m.filekuki.com/mobile/img/m_logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000P"
+        },
+        {
+          "kind": "event",
+          "text": "첫 달 100원"
+        },
+        {
+          "kind": "event",
+          "text": "출석 50P"
+        }
+      ],
+      "operator": {
+        "name": "몬스터(주)",
+        "bizNo": null,
+        "from": "footer"
+      },
+      "domainYear": 2013,
+      "affiliate": false
+    },
+    {
+      "id": "filesun",
+      "name": "파일썬",
+      "status": "active",
+      "url": "https://www.filesun.com/",
+      "domains": [
+        "filesun.com"
+      ],
+      "playId": "com.is.filesun.version4",
+      "appStoreId": null,
+      "logoSrc": "https://img.filesun.com/common/header/logo/sun_logo200x72v4.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 300P"
+        },
+        {
+          "kind": "event",
+          "text": "콘텐츠 50% 할인"
+        },
+        {
+          "kind": "event",
+          "text": "친구 초대 1,000P"
+        }
+      ],
+      "operator": {
+        "name": "(주)마이플",
+        "bizNo": "315-81-38367",
+        "from": "footer"
+      },
+      "domainYear": 2010,
+      "affiliate": false
+    },
+    {
+      "id": "filejo",
+      "name": "파일조",
+      "status": "active",
+      "url": "https://www.filejo.com/main/",
+      "domains": [
+        "filejo.com"
+      ],
+      "playId": "com.funbox.jlsco",
+      "appStoreId": "1207126155",
+      "logoSrc": "https://wimg.filejo.com/top/logo.gif",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 500P"
+        },
+        {
+          "kind": "event",
+          "text": "방송 100원 이용"
+        }
+      ],
+      "operator": {
+        "name": "(주)제이엘에스커뮤니케이션",
+        "bizNo": "122-86-21648",
+        "from": "footer"
+      },
+      "domainYear": 2011,
+      "affiliate": false
+    },
+    {
+      "id": "filemong",
+      "name": "파일몽",
+      "status": "active",
+      "url": "https://filemong.com/",
+      "domains": [
+        "filemong.com"
+      ],
+      "playId": "com.me.filemong",
+      "appStoreId": null,
+      "logoSrc": "https://filemong.com/design/img/event_logo/event_logo_fall.gif",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 1,000P"
+        },
+        {
+          "kind": "event",
+          "text": "출석 최대 3,300P"
+        },
+        {
+          "kind": "event",
+          "text": "리뷰 작성 2,000P"
+        }
+      ],
+      "operator": {
+        "name": "(주)웹트리",
+        "bizNo": "556-81-01758",
+        "from": "footer"
+      },
+      "domainYear": 2020,
+      "affiliate": false,
+      "logoFix": {
+        "crop": [
+          8,
+          22,
+          196,
+          40
+        ],
+        "whiteToDark": true
+      }
+    },
+    {
+      "id": "tple",
+      "name": "티플",
+      "status": "active",
+      "url": "https://www.tple.co.kr/",
+      "domains": [
+        "tple.co.kr"
+      ],
+      "playId": "kr.co.tple.downapp",
+      "appStoreId": null,
+      "logoSrc": "https://image3.tple.co.kr/_siteLogo/177491988068267.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "본인인증 1,000B"
+        },
+        {
+          "kind": "event",
+          "text": "방송 100원 이용"
+        }
+      ],
+      "operator": {
+        "name": "(주)티플미디어",
+        "bizNo": null,
+        "from": "app"
+      },
+      "domainYear": 2007,
+      "affiliate": false
+    },
+    {
+      "id": "ggulfile",
+      "name": "꿀파일",
+      "status": "active",
+      "url": "https://ggulfile.com/",
+      "domains": [
+        "ggulfile.com"
+      ],
+      "playId": "com.ggulfile.app.ggulfile_app",
+      "appStoreId": null,
+      "logoSrc": null,
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 300P"
+        },
+        {
+          "kind": "event",
+          "text": "페이백 이벤트"
+        }
+      ],
+      "operator": {
+        "name": "주식회사 비이커뮤니케이션",
+        "bizNo": "751-81-03481",
+        "from": "footer"
+      },
+      "domainYear": 2024,
+      "affiliate": false
+    },
+    {
+      "id": "filemaru",
+      "name": "파일마루",
+      "status": "active",
+      "url": "https://www.filemaru.com/",
+      "domains": [
+        "filemaru.com"
+      ],
+      "playId": "com.mideak.fmav7",
+      "appStoreId": "1640598483",
+      "logoSrc": "https://www.filemaru.com/img/comm/logo.gif",
+      "perks": [
+        {
+          "kind": "event",
+          "text": "인스타 팔로우 이벤트"
+        }
+      ],
+      "operator": {
+        "name": "(주)쉬프트",
+        "bizNo": "617-86-13554",
+        "from": "footer"
+      },
+      "domainYear": 2016,
+      "affiliate": false
+    },
+    {
+      "id": "ssadafile",
+      "name": "싸다파일",
+      "status": "active",
+      "url": "https://ssadafile.com/",
+      "domains": [
+        "ssadafile.com"
+      ],
+      "playId": "com.ssadafile.app.ssadafilev1",
+      "appStoreId": null,
+      "logoSrc": "https://ssadafile.com/img/common/logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 300P"
+        },
+        {
+          "kind": "event",
+          "text": "페이백 이벤트"
+        }
+      ],
+      "operator": {
+        "name": "(주)디씨미디어",
+        "bizNo": "710-86-02259",
+        "from": "footer"
+      },
+      "domainYear": 2021,
+      "affiliate": false
+    },
+    {
+      "id": "filecity",
+      "name": "파일시티",
+      "status": "active",
+      "url": "https://www.filecity.co.kr/",
+      "domains": [
+        "filecity.co.kr"
+      ],
+      "playId": "kr.co.filecity.filecity_mobile_flutter_google2",
+      "appStoreId": "6514282151",
+      "logoSrc": "https://www.filecity.co.kr/img/logo2.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "첫 달 자유이용권 100원"
+        },
+        {
+          "kind": "event",
+          "text": "출근 시간 콘텐츠 무료"
+        }
+      ],
+      "operator": {
+        "name": "(주)엔티웍스",
+        "bizNo": "363-81-02500",
+        "from": "footer"
+      },
+      "domainYear": 2008,
+      "affiliate": false
+    },
+    {
+      "id": "todisk",
+      "name": "투디스크",
+      "status": "active",
+      "url": "https://www.todisk.com/",
+      "domains": [
+        "todisk.com"
+      ],
+      "playId": "com.todisk.aosdown",
+      "appStoreId": null,
+      "logoSrc": "https://himg.todisk.com/main/data/2026/10/15/logo/mobile_logo_1792050071mQdwlT797779.png",
+      "perks": [
+        {
+          "kind": "event",
+          "text": "정액권 100% 페이백"
+        },
+        {
+          "kind": "event",
+          "text": "선착순 이용권 100원"
+        }
+      ],
+      "operator": {
+        "name": "(주)쉬프트",
+        "bizNo": "617-86-13554",
+        "from": "footer"
+      },
+      "domainYear": 2013,
+      "affiliate": false,
+      "logoFix": {
+        "crop": [
+          49,
+          36,
+          203,
+          50
+        ],
+        "clearLight": true
+      }
+    },
+    {
+      "id": "filestar",
+      "name": "파일스타",
+      "status": "active",
+      "url": "https://filestar.co.kr/",
+      "domains": [
+        "filestar.co.kr"
+      ],
+      "playId": "com.me.filestar2",
+      "appStoreId": null,
+      "logoSrc": "https://filestar.co.kr/_static/web/images/common/logo_new.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 5,000P"
+        }
+      ],
+      "operator": {
+        "name": "주식회사 웹플레이",
+        "bizNo": "475-86-00886",
+        "from": "footer"
+      },
+      "domainYear": 2022,
+      "affiliate": false
+    },
+    {
+      "id": "geniefile",
+      "name": "지니파일",
+      "status": "active",
+      "url": "https://geniefile.com/",
+      "domains": [
+        "geniefile.com"
+      ],
+      "playId": "com.geniefilev2",
+      "appStoreId": null,
+      "logoSrc": "https://m.geniefile.com/design/img/header/logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 300P"
+        },
+        {
+          "kind": "event",
+          "text": "첫 결제 100원"
+        },
+        {
+          "kind": "event",
+          "text": "결제 10배 적립"
+        }
+      ],
+      "operator": {
+        "name": "주식회사 트렉션",
+        "bizNo": "726-81-03618",
+        "from": "footer"
+      },
+      "domainYear": 2023,
+      "affiliate": false
+    },
+    {
+      "id": "bigfile",
+      "name": "빅파일",
+      "status": "active",
+      "url": "https://www.bigfile.co.kr/",
+      "domains": [
+        "bigfile.co.kr"
+      ],
+      "playId": "kr.service.bigplay",
+      "appStoreId": "1577712260",
+      "logoSrc": "https://www.bigfile.co.kr/_template/service/images/common/2026/bigfile_logo.png",
+      "perks": [
+        {
+          "kind": "join",
+          "text": "가입 500P"
+        },
+        {
+          "kind": "event",
+          "text": "정기권 결제 쿠폰 3장"
+        },
+        {
+          "kind": "event",
+          "text": "빅파일mini 7일 무료"
+        }
+      ],
+      "operator": {
+        "name": "(주)블루트리",
+        "bizNo": "220-88-31556",
+        "from": "footer"
+      },
+      "domainYear": 2007,
+      "affiliate": false
+    }
+  ]
+}
