@@ -1175,6 +1175,202 @@
           }
         }
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "scale": 100,
+      "list": [
+        {
+          "id": "filesun",
+          "rank": 1,
+          "total": 85.72,
+          "items": {
+            "perks": 42.21,
+            "web_rank": 23.75,
+            "web_trend": 19.76
+          }
+        },
+        {
+          "id": "bigfile",
+          "rank": 2,
+          "total": 81.32,
+          "items": {
+            "perks": 43.42,
+            "web_rank": 19.38,
+            "web_trend": 18.52
+          }
+        },
+        {
+          "id": "ondisk",
+          "rank": 3,
+          "total": 79.03,
+          "items": {
+            "perks": 34.03,
+            "web_rank": 25,
+            "web_trend": 20
+          }
+        },
+        {
+          "id": "filemong",
+          "rank": 4,
+          "total": 78.87,
+          "items": {
+            "perks": 45,
+            "web_rank": 15,
+            "web_trend": 18.87
+          }
+        },
+        {
+          "id": "kdisk",
+          "rank": 5,
+          "total": 74.28,
+          "items": {
+            "perks": 34.03,
+            "web_rank": 21.25,
+            "web_trend": 19
+          }
+        },
+        {
+          "id": "ggulfile",
+          "rank": 6,
+          "total": 74.02,
+          "items": {
+            "perks": 30.27,
+            "web_rank": 13.75,
+            "web_trend": 30
+          }
+        },
+        {
+          "id": "filejo",
+          "rank": 7,
+          "total": 73.89,
+          "items": {
+            "perks": 31.91,
+            "web_rank": 22.5,
+            "web_trend": 19.48
+          }
+        },
+        {
+          "id": "wedisk",
+          "rank": 8,
+          "total": 72.9,
+          "items": {
+            "perks": 36.04,
+            "web_rank": 17.5,
+            "web_trend": 19.36
+          }
+        },
+        {
+          "id": "filekuki",
+          "rank": 9,
+          "total": 72.51,
+          "items": {
+            "perks": 45,
+            "web_rank": 10,
+            "web_trend": 17.51
+          }
+        },
+        {
+          "id": "filenori",
+          "rank": 10,
+          "total": 71.62,
+          "items": {
+            "perks": 36.04,
+            "web_rank": 16.25,
+            "web_trend": 19.33
+          }
+        },
+        {
+          "id": "geniefile",
+          "rank": 11,
+          "total": 68.14,
+          "items": {
+            "perks": 42.21,
+            "web_rank": 6.25,
+            "web_trend": 19.68
+          }
+        },
+        {
+          "id": "todisk",
+          "rank": 12,
+          "total": 61.61,
+          "items": {
+            "perks": 25.18,
+            "web_rank": 19.38,
+            "web_trend": 17.05
+          }
+        },
+        {
+          "id": "tple",
+          "rank": 13,
+          "total": 56.21,
+          "items": {
+            "perks": 34.03,
+            "web_rank": 5,
+            "web_trend": 17.18
+          }
+        },
+        {
+          "id": "filestar",
+          "rank": 14,
+          "total": 48.98,
+          "items": {
+            "perks": 25.18,
+            "web_rank": 2.5,
+            "web_trend": 21.3
+          }
+        },
+        {
+          "id": "yesfile",
+          "rank": 15,
+          "total": 48.76,
+          "items": {
+            "perks": 18.61,
+            "web_rank": 11.88,
+            "web_trend": 18.27
+          }
+        },
+        {
+          "id": "ssadafile",
+          "rank": 16,
+          "total": 45.15,
+          "items": {
+            "perks": 30.27,
+            "web_rank": 11.88,
+            "web_trend": 3
+          }
+        },
+        {
+          "id": "filebogo",
+          "rank": 17,
+          "total": 44.82,
+          "items": {
+            "perks": 18.61,
+            "web_rank": 7.5,
+            "web_trend": 18.71
+          }
+        },
+        {
+          "id": "filemaru",
+          "rank": 18,
+          "total": 33.45,
+          "items": {
+            "perks": 4.5,
+            "web_rank": 8.75,
+            "web_trend": 20.2
+          }
+        },
+        {
+          "id": "filecity",
+          "rank": 19,
+          "total": 21.77,
+          "items": {
+            "perks": 4.5,
+            "web_rank": 3.75,
+            "web_trend": 13.52
+          }
+        }
+      ]
     }
   ]
 }
